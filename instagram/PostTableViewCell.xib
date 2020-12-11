@@ -72,7 +72,6 @@
             <connections>
                 <outlet property="captionLabel" destination="ky3-rQ-h6X" id="idS-HF-kFy"/>
                 <outlet property="dateLabel" destination="vP1-qe-DQJ" id="H17-Vw-w5s"/>
-                <outlet property="datelabel" destination="vP1-qe-DQJ" id="f4T-ft-gAo"/>
                 <outlet property="likeButton" destination="Ni7-Rb-geL" id="Pnz-xY-If7"/>
                 <outlet property="likeLabel" destination="bd3-Y3-341" id="imo-Zg-D9C"/>
                 <outlet property="postImageView" destination="3q3-Z9-eM9" id="AhW-tq-iWn"/>
