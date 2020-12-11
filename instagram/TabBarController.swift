@@ -7,11 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
+        // currentUserがnilならログインしていない
+        if Auth.auth().currentUser == nil {
+            // ログインしていないときの処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+                       self.present(loginViewController!, animated: true, completion: nil)
+        }
+    }
+//
     override func viewDidLoad() {
         super.viewDidLoad()
+//
+        
         // タブアイコンの色
         self.tabBar.tintColor = UIColor(red: 1.0, green: 0.44, blue: 0.11, alpha: 1)
         // タブバーの背景色
