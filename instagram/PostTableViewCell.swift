@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseUI
 
 class PostTableViewCell: UITableViewCell {
@@ -47,6 +48,9 @@ class PostTableViewCell: UITableViewCell {
                 formatter.dateFormat = "yyyy-MM-dd HH:mm"
                 let dateString = formatter.string(from: date)
                 self.dateLabel.text = dateString
+                
+                //コメントの表示
+                self.commentOutputLabel.text = "\(postData.name!) : \(postData.comment!)"
             }
 
             // いいね数の表示
