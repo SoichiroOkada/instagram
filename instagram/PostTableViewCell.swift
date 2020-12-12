@@ -15,6 +15,10 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentImputLabel: UITextField!
+    @IBAction func commentImputbutton(_ sender: Any) {
+    }
+    @IBOutlet weak var commentOutputLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -68,7 +68,35 @@ let postsRef = Firestore.firestore().collection(Const.PostPath).order(by: "date"
          }
      }
  }
+    // セル内のボタンがタップされた時に呼ばれるメソッド
+    @objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: likeボタンがタップされました。")
 
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+
+        // likesを更新する
+        if let myid = Auth.auth().currentUser?.uid {
+            // 更新データを作成する
+            var updateValue: FieldValue
+            if postData.isLiked {
+                // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
+                updateValue = FieldValue.arrayRemove([myid])
+            } else {
+                // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
+                updateValue = FieldValue.arrayUnion([myid])
+            }
+            // likesに更新データを書き込む
+            let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+            postRef.updateData(["likes": updateValue])
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postArray.count
     }
@@ -78,6 +106,9 @@ let postsRef = Firestore.firestore().collection(Const.PostPath).order(by: "date"
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
 
+        // セル内のボタンのアクションをソースコードで設定する
+        cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
         return cell
     }
 }
+
