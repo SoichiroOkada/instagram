@@ -18,6 +18,12 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentImputLabel: UITextField!
     @IBAction func commentImputbutton(_ sender: Any) {
+        
+        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+        let postDic = [
+            "comment": self.commentImputLabel.text!,
+            ] as [String : Any]
+        postRef.setData(postDic)
     }
     @IBOutlet weak var commentOutputLabel: UILabel!
     
@@ -50,8 +56,10 @@ class PostTableViewCell: UITableViewCell {
                 self.dateLabel.text = dateString
                 
                 //コメントの表示
-                self.commentOutputLabel.text = "\(postData.name!) : \(postData.comment!)"
-            }
+                        self.commentOutputLabel.text = "postData.comment!"
+                
+//                self.commentOutputLabel.text = "\(postData.name!) : \(postData.comment!)"
+//            }
 
             // いいね数の表示
             let likeNumber = postData.likes.count
@@ -67,3 +75,4 @@ class PostTableViewCell: UITableViewCell {
             }
         }
     }
+}

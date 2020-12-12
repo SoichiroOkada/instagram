@@ -39,7 +39,7 @@ class PostData: NSObject {
                 // myidがあれば、いいねを押していると認識する。
                 self.isLiked = true
             }
-            self.comment = postDic["commnent"] as? String
+            self.comment = postDic["comment"] as? String
         }
     }
 }
