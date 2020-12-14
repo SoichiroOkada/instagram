@@ -29,6 +29,10 @@ class PostData: NSObject {
 
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()
+        
+        //commentの追加
+        self.comment = postDic["comment"] as? String
+
 
         if let likes = postDic["likes"] as? [String] {
             self.likes = likes
@@ -39,7 +43,6 @@ class PostData: NSObject {
                 // myidがあれば、いいねを押していると認識する。
                 self.isLiked = true
             }
-            self.comment = postDic["comment"] as? String
         }
     }
 }

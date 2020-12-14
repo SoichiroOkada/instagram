@@ -18,13 +18,15 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     
     @IBAction func commentImputbutton(_ sender: Any) {
-        
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "comment") as! CommentViewController
+//            self.present(vc, animated: true, completion: nil)
 //        let postRef = Firestore.firestore().collection(Const.PostPath).document()
 //        let postDic = [
 //            "comment": self.commentImputLabel.text!,
 //            ] as [String : Any]
 //        postRef.setData(postDic)
     }
+    
     @IBOutlet weak var commentOutputLabel: UILabel!
     
     override func awakeFromNib() {
@@ -56,7 +58,7 @@ class PostTableViewCell: UITableViewCell {
                 self.dateLabel.text = dateString
                 
                 //コメントの表示
-                        self.commentOutputLabel.text = "postData.comment!"
+                self.commentOutputLabel.text = "\(postData.comment!)"
                 
 //                self.commentOutputLabel.text = "\(postData.name!) : \(postData.comment!)"
 //            }
