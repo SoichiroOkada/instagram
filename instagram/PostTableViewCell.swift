@@ -16,14 +16,14 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-    @IBOutlet weak var commentImputLabel: UITextField!
+    
     @IBAction func commentImputbutton(_ sender: Any) {
         
-        let postRef = Firestore.firestore().collection(Const.PostPath).document()
-        let postDic = [
-            "comment": self.commentImputLabel.text!,
-            ] as [String : Any]
-        postRef.setData(postDic)
+//        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+//        let postDic = [
+//            "comment": self.commentImputLabel.text!,
+//            ] as [String : Any]
+//        postRef.setData(postDic)
     }
     @IBOutlet weak var commentOutputLabel: UILabel!
     

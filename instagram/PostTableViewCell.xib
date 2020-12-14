@@ -45,17 +45,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP1-qe-DQJ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vP1-qe-DQJ">
                         <rect key="frame" x="130" y="638" width="414" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ubA-SC-yaW">
-                        <rect key="frame" x="130" y="594" width="314" height="34"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMB-Cm-FJn">
                         <rect key="frame" x="454" y="594" width="110" height="30"/>
                         <constraints>
@@ -90,10 +85,8 @@
                 <constraints>
                     <constraint firstItem="bd3-Y3-341" firstAttribute="leading" secondItem="Ni7-Rb-geL" secondAttribute="trailing" constant="10" id="5CO-yl-oh8"/>
                     <constraint firstItem="bd3-Y3-341" firstAttribute="centerY" secondItem="Ni7-Rb-geL" secondAttribute="centerY" id="676-px-HEZ"/>
-                    <constraint firstItem="DMB-Cm-FJn" firstAttribute="leading" secondItem="ubA-SC-yaW" secondAttribute="trailing" constant="10" id="Cmo-o2-ZVd"/>
                     <constraint firstItem="Ni7-Rb-geL" firstAttribute="top" secondItem="3q3-Z9-eM9" secondAttribute="bottom" constant="10" id="Djl-23-3MR"/>
                     <constraint firstItem="uPz-lF-pCI" firstAttribute="bottom" secondItem="gfI-Qq-bkZ" secondAttribute="bottom" id="EVI-rG-2pO"/>
-                    <constraint firstItem="ubA-SC-yaW" firstAttribute="top" secondItem="Ni7-Rb-geL" secondAttribute="top" id="GJu-Za-t08"/>
                     <constraint firstItem="DMB-Cm-FJn" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="Gle-li-Md8"/>
                     <constraint firstAttribute="trailingMargin" secondItem="vP1-qe-DQJ" secondAttribute="trailing" constant="10" id="H0z-lf-FdK"/>
                     <constraint firstItem="bd3-Y3-341" firstAttribute="top" secondItem="Ni7-Rb-geL" secondAttribute="top" id="KTP-dB-2yh"/>
@@ -108,9 +101,7 @@
                     <constraint firstAttribute="trailing" secondItem="3q3-Z9-eM9" secondAttribute="trailing" id="bn7-jm-KQs"/>
                     <constraint firstItem="vP1-qe-DQJ" firstAttribute="leading" secondItem="bd3-Y3-341" secondAttribute="trailing" constant="10" id="brc-Yk-MuE"/>
                     <constraint firstItem="uPz-lF-pCI" firstAttribute="leading" secondItem="gfI-Qq-bkZ" secondAttribute="trailing" constant="10" id="eO5-an-h9z"/>
-                    <constraint firstItem="ubA-SC-yaW" firstAttribute="leading" secondItem="bd3-Y3-341" secondAttribute="trailing" constant="10" id="hDZ-Ne-ru9"/>
                     <constraint firstItem="3q3-Z9-eM9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="jSK-Ks-74f"/>
-                    <constraint firstItem="vP1-qe-DQJ" firstAttribute="top" secondItem="ubA-SC-yaW" secondAttribute="bottom" constant="10" id="nEr-qX-L7i"/>
                     <constraint firstItem="DMB-Cm-FJn" firstAttribute="top" secondItem="Ni7-Rb-geL" secondAttribute="top" id="uIs-fz-azx"/>
                     <constraint firstAttribute="trailingMargin" secondItem="ky3-rQ-h6X" secondAttribute="trailing" constant="10" id="xlq-Dc-Bj7"/>
                     <constraint firstItem="3q3-Z9-eM9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zhB-BO-SYZ"/>
@@ -119,7 +110,6 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="ky3-rQ-h6X" id="idS-HF-kFy"/>
-                <outlet property="commentImputLabel" destination="ubA-SC-yaW" id="RYs-np-rnM"/>
                 <outlet property="commentOutputLabel" destination="gfI-Qq-bkZ" id="SWI-cm-494"/>
                 <outlet property="dateLabel" destination="vP1-qe-DQJ" id="H17-Vw-w5s"/>
                 <outlet property="likeButton" destination="Ni7-Rb-geL" id="Pnz-xY-If7"/>

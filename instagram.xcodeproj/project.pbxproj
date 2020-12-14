@@ -24,6 +24,7 @@
 		918DF82025820FF900D2953B /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918DF81F25820FF900D2953B /* PostData.swift */; };
 		918DF823258210B200D2953B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918DF821258210B200D2953B /* PostTableViewCell.swift */; };
 		918DF824258210B200D2953B /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 918DF822258210B200D2953B /* PostTableViewCell.xib */; };
+		918DF828258777E600D2953B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918DF827258777E600D2953B /* CommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		918DF81F25820FF900D2953B /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		918DF821258210B200D2953B /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		918DF822258210B200D2953B /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		918DF827258777E600D2953B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		D986450111E3962473A3AC39 /* Pods-instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.debug.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		EE8A0F1A91A9C307979B296D /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				9113A442257A5196004C0AA0 /* Main.storyboard */,
 				91232F24257E27D600496FC4 /* HomeViewController.swift */,
 				918DF81D2581E92600D2953B /* Const.swift */,
+				918DF827258777E600D2953B /* CommentViewController.swift */,
 				918DF821258210B200D2953B /* PostTableViewCell.swift */,
 				918DF822258210B200D2953B /* PostTableViewCell.xib */,
 				918DF81F25820FF900D2953B /* PostData.swift */,
@@ -246,6 +249,7 @@
 				91232F23257E27C600496FC4 /* ImageSelectViewController.swift in Sources */,
 				918DF82025820FF900D2953B /* PostData.swift in Sources */,
 				9113A463257B9B29004C0AA0 /* TabBarController.swift in Sources */,
+				918DF828258777E600D2953B /* CommentViewController.swift in Sources */,
 				9113A43D257A5196004C0AA0 /* AppDelegate.swift in Sources */,
 				9113A43F257A5196004C0AA0 /* SceneDelegate.swift in Sources */,
 				918DF81E2581E92600D2953B /* Const.swift in Sources */,
