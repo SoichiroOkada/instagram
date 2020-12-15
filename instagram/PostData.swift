@@ -18,7 +18,6 @@ class PostData: NSObject {
     var isLiked: Bool = false
     
 //    commentの追加
-//    var comment: String?
     var comments: [String] = []
     
     
@@ -35,12 +34,10 @@ class PostData: NSObject {
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()
         
-        //commentの追加
-//        self.comment = postDic["comment"] as? String
         if let comments = postDic["comments"] as? [String] {
             self.comments = comments
         }
-
+        
         if let likes = postDic["likes"] as? [String] {
             self.likes = likes
         }
