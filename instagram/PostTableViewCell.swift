@@ -17,11 +17,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     
-    @IBAction func commentImputbutton(_ sender: Any) {
-//    let vc = self.storyboard?.instantiateViewController(withIdentifier: "comment") as! CommentViewController
-//    self.present(vc, animated: true, completion: nil)
-    }
-    
+    //コメント機能実装
+    @IBOutlet weak var commentImputButton: UIButton!
     @IBOutlet weak var commentOutputLabel: UILabel!
     
     override func awakeFromNib() {

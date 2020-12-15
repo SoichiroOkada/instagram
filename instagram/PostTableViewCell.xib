@@ -57,9 +57,6 @@
                             <constraint firstAttribute="width" constant="110" id="Nr5-bw-PAO"/>
                         </constraints>
                         <state key="normal" title="コメント投稿"/>
-                        <connections>
-                            <action selector="commentImputbutton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pyF-ck-fPK"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPz-lF-pCI">
                         <rect key="frame" x="5" y="738" width="539" height="20"/>
@@ -96,6 +93,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="ky3-rQ-h6X" id="idS-HF-kFy"/>
+                <outlet property="commentImputButton" destination="DMB-Cm-FJn" id="hYj-Y2-b63"/>
                 <outlet property="commentOutputLabel" destination="uPz-lF-pCI" id="Qd9-O8-rwM"/>
                 <outlet property="dateLabel" destination="vP1-qe-DQJ" id="H17-Vw-w5s"/>
                 <outlet property="likeButton" destination="Ni7-Rb-geL" id="Pnz-xY-If7"/>
