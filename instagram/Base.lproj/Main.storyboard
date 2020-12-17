@@ -163,9 +163,34 @@
                     <view key="view" contentMode="scaleToFill" id="Na8-dl-FpE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0x4-li-XeE">
+                                <rect key="frame" x="191.5" y="478" width="31" height="30"/>
+                                <state key="normal" title="送信"/>
+                                <connections>
+                                    <action selector="commentSendButton:" destination="sZZ-yN-Ofz" eventType="touchUpInside" id="9Ga-jX-qYt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメントを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hhr-af-7Nf">
+                                <rect key="frame" x="20" y="344" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="q0E-Sz-PqO" firstAttribute="trailing" secondItem="Hhr-af-7Nf" secondAttribute="trailing" constant="20" id="1KV-k8-zxu"/>
+                            <constraint firstItem="Hhr-af-7Nf" firstAttribute="centerX" secondItem="Na8-dl-FpE" secondAttribute="centerX" id="75d-jA-8PH"/>
+                            <constraint firstItem="Hhr-af-7Nf" firstAttribute="leading" secondItem="q0E-Sz-PqO" secondAttribute="leading" constant="20" id="HiM-yZ-8pi"/>
+                            <constraint firstItem="Hhr-af-7Nf" firstAttribute="top" secondItem="q0E-Sz-PqO" secondAttribute="top" constant="300" id="P3p-0N-FMc"/>
+                            <constraint firstItem="0x4-li-XeE" firstAttribute="top" secondItem="Hhr-af-7Nf" secondAttribute="bottom" constant="100" id="R5g-A3-ecz"/>
+                            <constraint firstItem="0x4-li-XeE" firstAttribute="centerX" secondItem="Na8-dl-FpE" secondAttribute="centerX" id="kqi-cQ-rJa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="q0E-Sz-PqO"/>
                     </view>
+                    <connections>
+                        <outlet property="commentImputTextField" destination="Hhr-af-7Nf" id="cn4-q2-h98"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYr-OW-g8H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
