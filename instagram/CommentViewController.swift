@@ -20,7 +20,7 @@ class CommentViewController: UIViewController {
         else{
             
             // HUDで処理中を表示
-            SVProgressHUD.show()
+//            SVProgressHUD.show()
             //usernameを取得してコメントと合わせる
             // 表示名を取得してTextFieldに設定する
   
@@ -51,3 +51,26 @@ class CommentViewController: UIViewController {
      */
     
 }
+
+
+//    // タップされたセルのインデックスを求める
+//    let touch = event.allTouches?.first
+//    let point = touch!.location(in: self.tableView)
+//    let indexPath = tableView.indexPathForRow(at: point)
+//
+//    // 配列からタップされたインデックスのデータを取り出す
+//    let postData = postArray[indexPath!.row]
+//
+//    // likesを更新する
+//    if let myid = Auth.auth().currentUser?.uid {
+//        // 更新データを作成する
+//        var updateValue: FieldValue
+//        if postData.isLiked {
+//            // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
+//            updateValue = FieldValue.arrayRemove([myid])
+//        } else {
+//        // likesに更新データを書き込む
+//        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+//        postRef.updateData(["comments": updateValue])
+//    }
+//}

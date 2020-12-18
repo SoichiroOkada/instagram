@@ -100,6 +100,11 @@ let postsRef = Firestore.firestore().collection(Const.PostPath).order(by: "date"
     //commentImputbutton
     @objc func handleButton2(_ sender: UIButton, forEvent event: UIEvent) {
          print("DEBUG_PRINT: commentImputButtonボタンがタップされました。")
+        
+         func prepare(for segue: CommentViewController, sender: Any?) {
+            
+        }
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "comment")as! CommentViewController
         self.present(vc, animated: true, completion:nil)
 
@@ -123,15 +128,6 @@ let postsRef = Firestore.firestore().collection(Const.PostPath).order(by: "date"
         cell.commentImputButton.addTarget(self, action:#selector(handleButton2(_:forEvent:)), for: .touchDown)
         return cell
     }
-//
-//    func commentImput(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        // セルを取得してデータを設定する
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
-//        cell.setPostData(postArray[indexPath.row])
-//
-//        // セル内のボタンのアクションをソースコードで設定する
-//        cell.commentImputButton.addTarget(self, action:#selector(ImputButton(_:forEvent:)), for: .touchUpInside)
-//        return cell
-//    }
+
 }
 
