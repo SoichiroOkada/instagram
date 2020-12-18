@@ -20,10 +20,19 @@ class CommentViewController: UIViewController {
         else{
             
             // HUDで処理中を表示
-//            SVProgressHUD.show()
+            //            SVProgressHUD.show()
+            
+            //コメントを取得する
+            
             //usernameを取得してコメントと合わせる
-            // 表示名を取得してTextFieldに設定する
-  
+            
+            // commentsに更新データを書き込む
+            //            let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+            //            postRef.updateData(["comments": updateValue])
+            //
+            
+            
+            
             
             
             // HUDを消す
