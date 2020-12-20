@@ -12,6 +12,9 @@ import SVProgressHUD
 
 class CommentViewController: UIViewController {
     
+//    変数を宣言しておく postData型で
+    var postData: PostData!
+    
     @IBOutlet weak var commentImputTextField: UITextField!
     @IBAction func commentSendButton(_ sender: Any) {
         if commentImputTextField.text == nil{

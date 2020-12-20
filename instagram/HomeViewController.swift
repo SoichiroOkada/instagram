@@ -107,13 +107,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
-    
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "comment")as! CommentViewController
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "comment")as! CommentViewController
         
-        //postdataを渡す 挨拶アプリの文字の送り方を参考にする
-        self.present(vc, animated: true, completion:nil)
-        
+        next.postData = postData
+
+        self.present(next, animated: true, completion:nil)
+
     }
     
     
