@@ -50,7 +50,7 @@ class PostTableViewCell: UITableViewCell {
                 self.dateLabel.text = dateString
             }
                 //コメントの表示
-//            self.commentOutputLabel.text = "\(postData.comment!)"
+//            self.commentOutputLabel.text = postData.comments
 //            
             // いいね数の表示
             let likeNumber = postData.likes.count

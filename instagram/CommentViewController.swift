@@ -12,38 +12,21 @@ import SVProgressHUD
 
 class CommentViewController: UIViewController {
     
-//    変数を宣言しておく postData型で
+    //    変数を宣言しておく postData型で
     var postData: PostData!
     
     @IBOutlet weak var commentImputTextField: UITextField!
     @IBAction func commentSendButton(_ sender: Any) {
-        if commentImputTextField.text == nil{
-            SVProgressHUD.showError(withStatus: "コメントを入力して下さい")
-        }
-        else{
-            
-            // HUDで処理中を表示
-            //            SVProgressHUD.show()
-            
-            //コメントを取得する
-            
-            //usernameを取得してコメントと合わせる
-            
-            // commentsに更新データを書き込む
-            //            let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-            //            postRef.updateData(["comments": updateValue])
-            //
-            
-            
-            
-            
-            
-            // HUDを消す
-            
-            
-            // 画面を閉じてタブ画面に戻る
-            self.dismiss(animated: true, completion: nil)
-        }
+        //        if commentImputTextField.text == nil{
+        //            SVProgressHUD.showError(withStatus: "コメントを入力して下さい")
+        //        }
+        //        else{
+        let name = Auth.auth().currentUser?.displayName
+        // commentsに更新データを書き込む
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+        postRef.updateData(["comments": commentImputTextField.text!+" \(name!)"])
+        // 画面を閉じてタブ画面に戻る
+        self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +34,14 @@ class CommentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    var updateValue: FieldValue
+    if postData.isLiked {
+        // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
+        updateValue = FieldValue.arrayRemove([myid])
+    } else {
+        // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
+        updateValue = FieldValue.arrayUnion([myid])
+    }
     /*
      // MARK: - Navigation
      
