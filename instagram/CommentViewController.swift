@@ -22,9 +22,14 @@ class CommentViewController: UIViewController {
         //        }
         //        else{
         let name = Auth.auth().currentUser?.displayName
+        
+        var updateValue: FieldValue
+        updateValue = FieldValue.arrayUnion([commentImputTextField.text!+"\(name!)"])
         // commentsに更新データを書き込む
         let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-        postRef.updateData(["comments": commentImputTextField.text!+" \(name!)"])
+//
+//        postRef.updateData(["comments":  commentImputTextField.text!+"\(name!)"])
+        postRef.updateData(["comments": updateValue])
         // 画面を閉じてタブ画面に戻る
         self.dismiss(animated: true, completion: nil)
     }
@@ -34,14 +39,7 @@ class CommentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var updateValue: FieldValue
-    if postData.isLiked {
-        // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
-        updateValue = FieldValue.arrayRemove([myid])
-    } else {
-        // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
-        updateValue = FieldValue.arrayUnion([myid])
-    }
+    
     /*
      // MARK: - Navigation
      
@@ -53,8 +51,10 @@ class CommentViewController: UIViewController {
      */
     
 }
-
-
+//
+//@objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
+//    print("DEBUG_PRINT: likeボタンがタップされました。")
+//
 //    // タップされたセルのインデックスを求める
 //    let touch = event.allTouches?.first
 //    let point = touch!.location(in: self.tableView)
@@ -71,8 +71,10 @@ class CommentViewController: UIViewController {
 //            // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
 //            updateValue = FieldValue.arrayRemove([myid])
 //        } else {
+//            // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
+//            updateValue = FieldValue.arrayUnion([myid])
+//        }
 //        // likesに更新データを書き込む
 //        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-//        postRef.updateData(["comments": updateValue])
+//        postRef.updateData(["likes": updateValue])
 //    }
-//}
