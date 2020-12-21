@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 import SVProgressHUD
 
 class CommentViewController: UIViewController {
@@ -17,20 +18,37 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var commentImputTextField: UITextField!
     @IBAction func commentSendButton(_ sender: Any) {
-        //        if commentImputTextField.text == nil{
-        //            SVProgressHUD.showError(withStatus: "コメントを入力して下さい")
-        //        }
-        //        else{
         let name = Auth.auth().currentUser?.displayName
         
-        var updateValue: FieldValue
-        updateValue = FieldValue.arrayUnion([commentImputTextField.text!+"\(name!)"])
+        //        if let commentid = Auth.auth().currentUser?.uid
+        //        {
+        var updateComments: FieldValue
+        
+        if postData.iscommented {
+            // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
+            updateComments = FieldValue.arrayRemove(["""
+                \(commentImputTextField.text!)
+                \(name!)
+                """])
+        } else {
+            // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
+            updateComments = FieldValue.arrayUnion(["""
+            \(commentImputTextField.text!)
+            \(name!)
+            """])
+        }
+        // likesに更新データを書き込む
+        
+        
+        //        var updateValue: FieldValue
+        //        updateValue = FieldValue.arrayUnion([commentImputTextField.text!+"\(name!)"])
         // commentsに更新データを書き込む
         let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-//
-//        postRef.updateData(["comments":  commentImputTextField.text!+"\(name!)"])
-        postRef.updateData(["comments": updateValue])
+        //
+        postRef.updateData(["comments": updateComments])
+        //        postRef.updateData(["comments": updateValue])
         // 画面を閉じてタブ画面に戻る
+        //        }
         self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
@@ -40,31 +58,10 @@ class CommentViewController: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 //
-//@objc func handleButton(_ sender: UIButton, forEvent event: UIEvent) {
-//    print("DEBUG_PRINT: likeボタンがタップされました。")
 //
-//    // タップされたセルのインデックスを求める
-//    let touch = event.allTouches?.first
-//    let point = touch!.location(in: self.tableView)
-//    let indexPath = tableView.indexPathForRow(at: point)
-//
-//    // 配列からタップされたインデックスのデータを取り出す
-//    let postData = postArray[indexPath!.row]
-//
-//    // likesを更新する
-//    if let myid = Auth.auth().currentUser?.uid {
+//if let myid = Auth.auth().currentUser?.uid {
 //        // 更新データを作成する
 //        var updateValue: FieldValue
 //        if postData.isLiked {

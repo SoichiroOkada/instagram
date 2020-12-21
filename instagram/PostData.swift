@@ -19,6 +19,7 @@ class PostData: NSObject {
     
 //    commentの追加
     var comments: [String] = []
+    var iscommented: Bool = false
     
     
     
@@ -36,6 +37,13 @@ class PostData: NSObject {
         
         if let comments = postDic["comments"] as? [String] {
             self.comments = comments
+            if let commentid = Auth.auth().currentUser?.uid {
+                // likesの配列の中にmyidが含まれているかチェックすることで、自分がいいねを押しているかを判断
+                if self.comments.firstIndex(of: commentid) != nil {
+                    // myidがあれば、いいねを押していると認識する。
+                    self.iscommented = true
+                }
+            }
         }
         
         if let likes = postDic["likes"] as? [String] {
