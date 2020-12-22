@@ -27,14 +27,12 @@ class CommentViewController: UIViewController {
         if postData.iscommented {
             // すでにいいねをしている場合は、いいね解除のためmyidを取り除く更新データを作成
             updateComments = FieldValue.arrayRemove(["""
-                \(commentImputTextField.text!)
-                \(name!)
+                \(commentImputTextField.text!)  \(name!)
                 """])
         } else {
             // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
             updateComments = FieldValue.arrayUnion(["""
-            \(commentImputTextField.text!)
-            \(name!)
+            \(commentImputTextField.text!)  \(name!)
             """])
         }
         // likesに更新データを書き込む

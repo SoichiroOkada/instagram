@@ -51,7 +51,8 @@ class PostTableViewCell: UITableViewCell {
             }
                 //コメントの表示
             //配列をstringに変換
-            let stringRepresentation = postData.comments.description
+//            let stringRepresentation = postData.comments.description
+            let stringRepresentation = postData.comments.joined(separator: "\n")
 //            配列を表示する
             self.commentOutputLabel.text = stringRepresentation
 //            
