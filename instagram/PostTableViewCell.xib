@@ -58,14 +58,15 @@
                         </constraints>
                         <state key="normal" title="コメント投稿"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPz-lF-pCI">
-                        <rect key="frame" x="5" y="718" width="539" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPz-lF-pCI">
+                        <rect key="frame" x="50" y="718" width="494" height="40"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="uPz-lF-pCI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="4oP-O0-dgg"/>
                     <constraint firstItem="bd3-Y3-341" firstAttribute="leading" secondItem="Ni7-Rb-geL" secondAttribute="trailing" constant="10" id="5CO-yl-oh8"/>
                     <constraint firstItem="bd3-Y3-341" firstAttribute="centerY" secondItem="Ni7-Rb-geL" secondAttribute="centerY" id="676-px-HEZ"/>
                     <constraint firstItem="Ni7-Rb-geL" firstAttribute="top" secondItem="3q3-Z9-eM9" secondAttribute="bottom" constant="10" id="Djl-23-3MR"/>
@@ -77,7 +78,6 @@
                     <constraint firstAttribute="trailingMargin" secondItem="uPz-lF-pCI" secondAttribute="trailing" constant="10" id="WiG-cw-U9n"/>
                     <constraint firstItem="ky3-rQ-h6X" firstAttribute="top" secondItem="bd3-Y3-341" secondAttribute="bottom" constant="10" id="Wu3-Uo-DHB"/>
                     <constraint firstItem="Ni7-Rb-geL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="agO-oj-c6c"/>
-                    <constraint firstItem="uPz-lF-pCI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="amR-kx-mka"/>
                     <constraint firstAttribute="trailing" secondItem="3q3-Z9-eM9" secondAttribute="trailing" id="bn7-jm-KQs"/>
                     <constraint firstItem="vP1-qe-DQJ" firstAttribute="leading" secondItem="bd3-Y3-341" secondAttribute="trailing" constant="10" id="brc-Yk-MuE"/>
                     <constraint firstAttribute="bottom" secondItem="uPz-lF-pCI" secondAttribute="bottom" constant="10" id="gF8-bc-fE0"/>
